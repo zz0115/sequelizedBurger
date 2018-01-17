@@ -21,6 +21,12 @@ $(function() {
     );
   });
 
+  // function updateView(){
+  //   $.get("/api/burgers",function(data){
+  //     newBurger
+  //   })
+  // }
+
   $(".create-form").on("submit", function(event) {
     // Make sure to preventDefault on a submit event.
     event.preventDefault();
@@ -29,6 +35,10 @@ $(function() {
       name: $("#bu").val().trim(),
       devoured: false
     };
+
+    console.log(newBurger);
+
+    // $.post("/", newBurger,updateView);
 
     // Send the POST request.
     $.ajax("/api/burgers", {
